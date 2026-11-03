@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { @apply font-body bg-[#120b08] text-coffee antialiased; }
+:root{--cream:#F7F0E3;--paper:#FBF7EE;--beige:#E6D5B8;--esp:#4A2C1C;--cof:#1F130E;--brass:#B08D57}
+.card .im{overflow:hidden}.card .im img{width:100%;height:100%;object-fit:cover}
+:focus-visible { outline: 2px solid #B08D57; outline-offset: 2px; }
+.field { @apply w-full rounded-lg border border-beige bg-white px-3 py-2.5 text-coffee focus:border-brass focus:outline-none; }
+.btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 font-semibold transition-colors disabled:opacity-50; }
+.btn-main { @apply bg-espresso text-cream hover:bg-coffee; }
+.btn-soft { @apply bg-beige text-espresso hover:bg-[#dcc7a2]; }
+.btn-danger { @apply bg-red-100 text-red-800 hover:bg-red-200; }
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise .35s ease both; }
+@media (prefers-reduced-motion: reduce) { .rise { animation: none; } }
+
+/* ===== Menu (mobile-app look) ===== */
+
+.app{max-width:430px;min-height:100vh;margin:auto;background:var(--paper);position:relative}
+.top{background:var(--cof);color:var(--cream);display:flex;align-items:center;justify-content:space-between;padding:calc(14px + env(safe-area-inset-top,0px)) 18px 14px}
+.logo{font-family:'Aref Ruqaa',serif;font-weight:700;font-size:32px;line-height:1.2;background:linear-gradient(180deg,#f3dfb4,#c49a5a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.top svg{width:26px;height:26px;color:var(--brass)}
+.hero{background:var(--cof);padding:0 16px 56px}
+.banner{position:relative;overflow:hidden;border-radius:26px;padding:22px 20px;min-height:170px;color:var(--cream);
+background:radial-gradient(circle at 20% 80%,#6b4129 0%,#3a2318 55%,#2a1a12 100%);border:1px solid #b08d5755}
+.banner h2{font-family:'Aref Ruqaa',serif;font-size:27px;margin:0 0 6px;line-height:1.3;max-width:56%}
+.banner p{margin:0;font-size:13px;color:#e6d5b8cc;max-width:50%;line-height:1.7}
+.banner .a,.banner .b{position:absolute}
+.banner .a{width:128px;height:128px;left:68px;bottom:-6px}
+.banner .b{width:112px;height:112px;left:-8px;bottom:-8px}
+.cats{position:sticky;top:0;z-index:5;margin-top:-34px;padding:0 14px}
+.cbar{display:flex;gap:6px;justify-content:space-between;background:var(--paper);border-radius:24px;padding:12px 8px 10px;box-shadow:0 10px 28px #1f130e40}
+.c{flex:1;background:none;border:0;cursor:pointer;text-align:center;font-family:inherit;color:#4a2c1c99;padding:0;transition:transform .15s}
+.c:active{transform:scale(.94)}
+.c .ic{width:56px;height:56px;margin:0 auto 6px;border-radius:50%;background:var(--cream);display:grid;place-items:center;border:2px solid transparent;transition:.2s}
+.c .ic svg{width:38px;height:38px}
+.c span{font-family:'Aref Ruqaa',serif;font-size:15px;font-weight:700}
+.c.on{color:var(--esp)}.c.on .ic{background:var(--beige);border-color:var(--brass)}
+main{padding:22px 16px calc(28px + env(safe-area-inset-bottom,0px))}
+h2.t{font-family:'Aref Ruqaa',serif;font-size:26px;color:var(--esp);margin:0 2px 14px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 4px 16px #4a2c1c14;animation:up .45s ease both;display:flex;flex-direction:column}
+.card .im{height:124px;display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,#fbf3e2,#ecdcbb)}
+.card .im svg{width:108px;height:108px;filter:drop-shadow(0 6px 6px #4a2c1c30)}
+.card .tx{padding:10px 12px 12px;display:flex;flex-direction:column;flex:1}
+.card h3{margin:0;font-size:15px;color:var(--esp);font-weight:700}
+.card p{margin:3px 0 10px;font-size:12px;line-height:1.6;color:#4a2c1c99;flex:1}
+.pr{align-self:flex-start;background:var(--cof);color:#f3dfb4;border-radius:999px;padding:3px 12px;font-weight:700;font-size:14px}
+.pr small{font-size:10px;font-weight:600;margin-right:3px;color:var(--brass)}
+@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.note{text-align:center;font-size:11px;color:#4a2c1c80;margin:20px 0 0}
+@media (prefers-reduced-motion:reduce){.card{animation:none}}
